@@ -1,1 +1,23 @@
-eshkere
+import pygame
+import sys
+pygame.init()
+
+#window 
+pygame.display.set_mode((1280, 1024))
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    #collor background
+    screen.fill((50, 20, 20))
+    pygame.display.flip()
+    
+#background
+
+#end program
+pygame.quit()
+sys.exit()
+
+
