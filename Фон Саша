@@ -15,28 +15,30 @@ GRAY = (211, 211, 211)
 #window 
 screen = pygame.display.set_mode((1280, 800))
 FPS=30
-
-#background
-screen.fill((BLACK))
-#FrameworkMAINwindow
-rect(screen,GRAY, (0, 0, 1280, 800), 8 )
-#playwindow
-rect(screen,GRAY, (50, 50, 840, 700), 5 )
 pygame.display.update()
 running = True
 
+#background
+screen.fill((BLACK))
+rect(screen,GRAY, (0, 0, 1280, 800), 8 )
+#playwindow
+rect(screen,GRAY, (50, 50, 840, 700), 5 )
+#score_window
+one = pygame.one.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\gifone.gif').convert_alpha()
+screen.blit(image, (100, 50))
+
+
+
 while running:
+    clock.tick(FPS)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-            
-    #color BACKbackground
+    pygame.display.update()
+
     
     pygame.display.flip()
     
-
-
-
 #end program
 pygame.quit()
 sys.exit()
