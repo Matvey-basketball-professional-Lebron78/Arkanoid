@@ -11,21 +11,30 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 BLACK = (0, 0, 0)
-
+GRAY = (211, 211, 211)
 #window 
 screen = pygame.display.set_mode((1280, 800))
 FPS=30
 
+#background
+screen.fill((BLACK))
+#FrameworkMAINwindow
+rect(screen,GRAY, (0, 0, 1280, 800), 8 )
+#playwindow
+rect(screen,GRAY, (50, 50, 840, 700), 5 )
+pygame.display.update()
 running = True
+
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    #collor BACKbackground
-    screen.fill((BLACK))
+            
+    #color BACKbackground
+    
     pygame.display.flip()
     
-#background
+
 
 
 #end program
