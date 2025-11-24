@@ -24,6 +24,8 @@ class Plitka:
 vse_plitki = []
 
 def unique_plitka(Plitka):
+    for i in range (78):
+        pl = Plitka
     for i in range (6):
         for j in range (13):
             Plitka.ryad = i
