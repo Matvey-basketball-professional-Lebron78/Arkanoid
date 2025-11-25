@@ -50,7 +50,6 @@ def place_plitku(screen, Plitka):
 for i in range (78):
     pl = Plitka()
     vse_plitki.append(pl)
-print(len(vse_plitki))
 i = 0
 j = 0
 for plit in vse_plitki:
