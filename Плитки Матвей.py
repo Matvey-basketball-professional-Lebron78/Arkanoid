@@ -1,5 +1,5 @@
 import pygame
-from pygame import *
+from pygame.draw import *
 
 
 #FIXME: Это убрать потом
@@ -14,47 +14,72 @@ class Plitka:
     
     y = 0
     
-    l = 0
+    l = 62
     
-    d = 0
+    d = 26
     
     ryad = 0
     
     stolb = 0
     
-    color = ' '
+    color = 'GREY'
     
     zhizn = True
+    
 
 #Здесь функция, которая задает всем плиткам положение и цвет
 
-pl = 0
+
 vse_plitki = []
 
+def place_plitku(screen, Plitka):
+    """Функция, рисующая плитки.
+    Принимает на вход координаты плитки, размеры плитки, цвет плитки, статус жизни плитки"""
+    
+    x = Plitka.x
+    y = Plitka.y
+    l = Plitka.l
+    d = Plitka.d
+    color = Plitka.color
+    zhizn = Plitka.zhizn
+    if zhizn == True:
+        rect(screen, color, (x - l/2, y - d/2, l, d))
+        rect(screen, 'WHITE', (x - l/2, y - d/2, l, d), 1)
+
+
+for i in range (78):
+    pl = Plitka()
+    vse_plitki.append(pl)
+print(len(vse_plitki))
+i = 0
+j = 0
+for plit in vse_plitki:
+    #Каждой плитке присваивается номер ряда и столбца
+    plit.stolb = i
+    plit.ryad = j
+    print(plit.stolb, plit.ryad)
+    #Каждой плитке присваиваются координаты
+    plit.x = 86 + plit.l * i 
+    plit.y = 73 + plit.d * j
+    i += 1
+    if i > 12:
+        i = 0
+        j += 1
+    place_plitku(screen, plit)
+    pygame.display.update()
+    
 #FIXME: это убрать(это в мейне будет)
+
 finished = False
+print(1)
 while not finished:
     #clock.tick(FPS)
+    for PLI in vse_plitki:
+        place_plitku(screen, PLI)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
 
 
-def unique_plitka(Plitka):
-    """Функция, которая присваивает каждой плитке номер ряда и столбца, цвет, координаты, размер"""
-    pl = 0
-    for i in range (78):
-        pl = Plitka()
-        vse_plitki.append(pl)
-    i = 0
-    j = 0
-    for plit in vse_plitki:
-        #
-        plit.stolb = i
-        plit.ryad = j
-        i += 1
-        if i > 11:
-            i = 0
-            j += 1
-        #plit.color = 
-        plit.x = 
+
+
