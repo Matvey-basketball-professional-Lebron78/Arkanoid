@@ -1,17 +1,23 @@
 #Всякие импорты
-from
+from Plitki_Matvey import *
+
+#Здесь всякие штуки, которые нужны для pygame
+FPS = 30
+screen = pygame.display.set_mode((1280, 800))
+finished = False
+
 #Запуск главного экрана
 
 #Начало игры(Большая надпись "Начало", затем мячик появляется на верхней части платформы и летит вертикально вверх, но с небольшим углом)
 
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
 while not finished:
-    clock.tick(FPS)
-    def 
+    #clock.tick(FPS)
+    for PLI in vse_plitki:
+        place_plitku(screen, PLI)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
-
 #Здесь будет подсчёт очков
 
 #Здесь будет проверка того, что еще остались плитки
