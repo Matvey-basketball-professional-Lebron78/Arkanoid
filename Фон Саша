@@ -20,40 +20,41 @@ running = True
 
 #background
 screen.fill((BLACK))
+
 rect(screen,GRAY, (0, 0, 1280, 800), 8 )
-#playwindow
-rect(screen,GRAY, (50, 50, 840, 700), 5 )
+#gamewindow
+rect(screen,GRAY, (47, 50, 843, 700), 5 )
 #score_Number
 #ZERO
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\zero.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\zero.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #ONE
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\one.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\one.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #TWO
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\two.png').convert_alpha()
-screen.blit(image, (80, 80))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\two.png').convert_alpha()
+#screen.blit(image, (80, 80))
 #THREE
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\three.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\three.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #FOUR
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\four.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\four.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #FIVE
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\five.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\five.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #SIX
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\six.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\six.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #SEVEN
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\seven.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\seven.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #EIGHT
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\eight.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\eight.png').convert_alpha()
+#screen.blit(image, (100, 50))
 #NINE
-image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\nine.png').convert_alpha()
-screen.blit(image, (100, 50))
+#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\nine.png').convert_alpha()
+#screen.blit(image, (100, 50))
 while running:
     
     for event in pygame.event.get():
