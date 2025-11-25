@@ -29,8 +29,8 @@ rect(screen,GRAY, (47, 50, 843, 700), 5 )
 #image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\zero.png').convert_alpha()
 #screen.blit(image, (100, 50))
 #ONE
-#image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\one.png').convert_alpha()
-#screen.blit(image, (100, 50))
+image = pygame.image.load('one.png').convert_alpha()
+screen.blit(image, (100, 50))
 #TWO
 #image = pygame.image.load('C:\\Users\\SUPERPC\\Desktop\\ARK\\Arkanoid\\two.png').convert_alpha()
 #screen.blit(image, (80, 80))
