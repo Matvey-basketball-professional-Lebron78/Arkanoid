@@ -17,19 +17,27 @@ class Plitka:
     
     color = ' '
     #FIXME: почему-то подчеркивает красным
-    zhizn = true
+    zhizn = 1
 
 #Здесь функция, которая задает всем плиткам положение и цвет
 
+pl = 0
 vse_plitki = []
 
 def unique_plitka(Plitka):
+    """Функция, которая присваивает каждой плитке номер ряда и столбца, цвет, координаты"""
+    pl = 0
     for i in range (78):
-        pl = Plitka
-    for i in range (6):
-        for j in range (13):
-            Plitka.ryad = i
-            Plitka.stolb = j
-            vse_plitki.append(Plitka)
-    for 
+        pl = Plitka()
+        vse_plitki.append(pl)
+    i = 0
+    j = 0
+    for plit in vse_plitki:
+        plit.stolb = i
+        plit.ryad = j
+        i += 1
+        if i > 11:
+            i = 0
+            j += 1
+        plit.
     
