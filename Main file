@@ -1,7 +1,8 @@
 #Всякие импорты
-from Plitki_Matvey import *
+import pygame
+#from Plitki_Matvey import *
 
-#Здесь всякие штуки, которые нужны для pygame
+#Здесь всякие штуки, которые нужны для pygame и кода
 FPS = 30
 screen = pygame.display.set_mode((1280, 800))
 finished = False
@@ -11,6 +12,11 @@ finished = False
 #Начало игры(Большая надпись "Начало", затем мячик появляется на верхней части платформы и летит вертикально вверх, но с небольшим углом)
 
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
+#1
+for PLI in vse_plitki:
+    """Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку"""
+    score_change = destroy(PLI, Ball) #FIXME: Ball
+    score += score_change
 while not finished:
     #clock.tick(FPS)
     for PLI in vse_plitki:
@@ -18,8 +24,10 @@ while not finished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
-#Здесь будет подсчёт очков
-
 #Здесь будет проверка того, что еще остались плитки
+"""Примерный цикл:
 
+
+
+"""
 #Здесь будет финальный экран с затраченным временем 1
