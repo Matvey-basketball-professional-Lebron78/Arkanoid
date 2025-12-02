@@ -1,3 +1,10 @@
+'''
+Docstring for Plitki_Matvey
+This file was writed by matvey ...
+it contains function to wa=orj=k with plitki
+'''
+
+
 import pygame
 from pygame.draw import *
 

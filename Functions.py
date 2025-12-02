@@ -1,3 +1,4 @@
+import pygame
 def place_plitku(screen, Plitka):
     """Функция, рисующая плитки.
     Принимает на вход координаты плитки, размеры плитки, цвет плитки, статус жизни плитки"""
@@ -8,7 +9,7 @@ def place_plitku(screen, Plitka):
     d = Plitka.d
     color = Plitka.color
     zhizn = Plitka.zhizn
-    if zhizn == true:
+    if zhizn == True:
         pygame.rect(screen, color, (x - l/2, y - d/2, l, d))
 
 def destroy(Plitka, Ball): #FIXME: Ball

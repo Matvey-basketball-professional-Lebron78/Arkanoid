@@ -90,63 +90,73 @@ class Ball():
             self.rect.bottom = platform.rect.top
     def draw(self, screen):
         pygame.draw.circle(screen, RED, self.rect.center, self.radius)
-#создание платформы посередине снизу
-platform = Platform(x = SCREEN_WIDTH // 2 - 50, 
-                    y = SCREEN_HEIGHT - 30,
-                    width = 100,
-                    height = 20,
-                    speed = 5,
-                    screen_width = SCREEN_WIDTH)
 
-#создание мяча на поатформе
-ball = Ball(x = platform.rect.centerx,
-            y = platform.rect.top - 10,
-            radius = 10,
-            speed = 7,
-            screen_width = SCREEN_WIDTH,
-            screen_height = SCREEN_HEIGHT)
-#создаётся окно, с заголовком
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Arkanoid")
-clock = pygame.time.Clock()
 
-#обработка события закрытия окна
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+def start(screen, clock):
+    #создание платформы посередине снизу
+    platform = Platform(x = SCREEN_WIDTH // 2 - 50, 
+                        y = SCREEN_HEIGHT - 30,
+                        width = 100,
+                        height = 20,
+                        speed = 5,
+                        screen_width = SCREEN_WIDTH)
+
+    #создание мяча на поатформе
+    ball = Ball(x = platform.rect.centerx,
+                y = platform.rect.top - 10,
+                radius = 10,
+                speed = 7,
+                screen_width = SCREEN_WIDTH,
+                screen_height = SCREEN_HEIGHT)
+
+    #обработка события закрытия окна
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                return -1
+            
+            #привязка нажатия кнопок мыши к перемещениям платформы
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if event.button == 1:
+                    platform.move_left()
+                elif event.button == 3:
+                    platform.move_right()
+                elif event.button == 2:
+                    ball.activate(platform.rect)
         
-        #привязка нажатия кнопок мыши к перемещениям платформы
-        if event.type == pygame.MOUSEBUTTONDOWN:
-            if event.button == 1:
-                platform.move_left()
-            elif event.button == 3:
-                platform.move_right()
-            elif event.button == 2:
-                ball.activate(platform.rect)
-    #при удержании кнопки платформа продолжает двигаться
-    mouse_button = pygame.mouse.get_pressed()
-    if mouse_button[0]:
-        platform.move_left()
-    if mouse_button[2]:
-        platform.move_right()
-    #неактивный мяч - на платформе + обновление координат активного мяча
-    if not ball.active:
-        ball.rect.midbottom = platform.rect.midtop
-    ball.update(platform)
-    #инактивация мяча в случае вылета за нижнюю границу
-    if ball.rect.top > SCREEN_HEIGHT:
-        ball.active = False
-    #отрисовка объектов
-    screen.fill(WHITE)
-    platform.draw(screen)
-    ball.draw(screen)
+        # if game.lose:
+        #    return score
+         
+        #при удержании кнопки платформа продолжает двигаться
+        mouse_button = pygame.mouse.get_pressed()
+        if mouse_button[0]:
+            platform.move_left()
+        if mouse_button[2]:
+            platform.move_right()
+        #неактивный мяч - на платформе + обновление координат активного мяча
+        if not ball.active:
+            ball.rect.midbottom = platform.rect.midtop
+        ball.update(platform)
+        #инактивация мяча в случае вылета за нижнюю границу
+        if ball.rect.top > SCREEN_HEIGHT:
+            ball.active = False
+        #отрисовка объектов
+        screen.fill(WHITE)
+        platform.draw(screen)
+        ball.draw(screen)
 
-    pygame.display.flip()
-    clock.tick(60)
-pygame.quit()
-sys.exit()
+        pygame.display.flip()
+        clock.tick(60)
+
+if __name__ == "__main__":
+    #создаётся окно, с заголовком
+    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    pygame.display.set_caption("Arkanoid")
+    clock = pygame.time.Clock()
+    x = start(screen, clock)
+    print(x)
+    pygame.quit()
+    sys.exit()
 
      
     
