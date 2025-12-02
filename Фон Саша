@@ -11,7 +11,7 @@ GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
 YELLOW = (255, 255, 0)
 BLACK = (0, 0, 0)
-GRAY = (211, 211, 211)
+GRAY = (211, 211, 211) 
 #window 
 screen = pygame.display.set_mode((1280, 800))
 FPS=30
@@ -37,7 +37,10 @@ digit_data = {
     8: {'file': 'eight.png', 'pos': (100, 50)},
     9: {'file': 'nine.png', 'pos': (100, 50)}
 }
-
+#HS
+rect(screen,BLUE, (920, 160, 320, 180), 2 )
+#S
+rect(screen,BLUE, (920, 240, 320, 60), 2 )
 while running:
     
     for event in pygame.event.get():
