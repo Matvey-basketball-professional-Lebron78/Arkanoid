@@ -14,7 +14,6 @@ score = 0
 FPS = 30
 screen = pygame.display.set_mode((1280, 800))
 finished = False
-vse_plitki = []
 
 #Запуск главного экрана
 
@@ -22,7 +21,7 @@ vse_plitki = []
 
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
 #while not finished:
-    
+t = 0
 start(screen, clock)
 print(10)
 #Здесь будет проверка того, что еще остались плитки
@@ -35,8 +34,6 @@ while finished == False:
             score += score_change
         for PLI in Plitka.vse_plitki: #Обновляем экран
             place_pl(screen, PLI)
-            print(1)
-        print(1)
         ball.draw(screen)
             #FIXME: здесь должна быть функция, рисующая шарик
         for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху

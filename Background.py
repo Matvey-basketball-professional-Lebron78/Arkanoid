@@ -5,6 +5,14 @@ import os
 
 pygame.init()
 
+#window 
+screen = pygame.display.set_mode((1280, 800))
+FPS=30
+clock = pygame.time.Clock()
+pygame.display.update()
+running = True
+
+
 #collors 
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
@@ -24,21 +32,17 @@ class gif:
         ]
         self.currimage = 0
 
-    '''def blit(self, screen, pos):
+    ''' def blit(self, screen, pos):
         self.currimage = (self.currimage + 1)  % (3 * len(self.IMAGES))
-        screen.blit(self.IMAGES[self.currimage//3], pos)'''
+        screen.blit(self.IMAGES[self.currimage//3], pos) '''
 
-#BG = gif('background') 
+BG = gif('background') 
 
-# screen.blit(IMAGES['one'], (0,0))
-
-
-#window 
-screen = pygame.display.set_mode((1280, 800))
-FPS=30
-clock = pygame.time.Clock()
-pygame.display.update()
-running = True
+for i in range(9):  
+    filename = f'{i}.png'
+    if filename in BG.IMAGES:
+        screen.blit(BG.IMAGES[filename], (23 + i*50, 50))
+    
 
 #background
 # screen.fill((BLACK))
