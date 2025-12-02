@@ -1,12 +1,12 @@
 '''
-Docstring for Plitki_Matvey
-This file was writed by matvey ...
-it contains function to wa=orj=k with plitki
+Docstring for Plitki
+This file was writed by matvey goddamn LEBRON denisov (aka Matvey Denisov B06-506)
+it contains class plitki and some functions for it
 '''
 
 import pygame
 from pygame.draw import *
-from Functions import *
+from func import *
 
 COLORS = ['GREY','RED','BLUE','ORANGE','PINK','GREEN']
 #FIXME: Это убрать потом
@@ -14,9 +14,7 @@ FPS = 30
 screen = pygame.display.set_mode((1280, 800))
 #^^
 
-def place_plitku(screen, Plitka):
-    """Функция, рисующая плитки.
-    Принимает на вход координаты плитки, размеры плитки, цвет плитки, статус жизни плитки"""
+"""def place_plitku(screen, Plitka):
     
     x = Plitka.x
     y = Plitka.y
@@ -26,7 +24,7 @@ def place_plitku(screen, Plitka):
     zhizn = Plitka.zhizn
     if zhizn == True:
         rect(screen, color, (x - l/2, y - d/2, l, d))
-        rect(screen, 'WHITE', (x - l/2, y - d/2, l, d), 1)
+        rect(screen, 'WHITE', (x - l/2, y - d/2, l, d), 1)"""
 
 class Plitka:
     """Класс, содержащий плитки/кирпичики, которые уничтожаются, когда в них попадает шарик
@@ -76,7 +74,7 @@ for plit in vse_plitki:
     if i > 12:
         i = 0
         j += 1
-    place_plitku(screen, plit)
+    place_pl(screen, plit)
     pygame.display.update()
     
 #FIXME: это убрать(это в мейне будет)
@@ -86,9 +84,8 @@ print(1)
 while not finished:
     #clock.tick(FPS)
     for PLI in vse_plitki:
-        place_plitku(screen, PLI)
+        place_pl(screen, PLI)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
-
 

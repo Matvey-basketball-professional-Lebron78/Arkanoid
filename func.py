@@ -1,5 +1,6 @@
 import pygame
-def place_plitku(screen, Plitka):
+from pygame.draw import *
+def place_pl(screen, Plitka):
     """Функция, рисующая плитки.
     Принимает на вход координаты плитки, размеры плитки, цвет плитки, статус жизни плитки"""
     
@@ -10,7 +11,8 @@ def place_plitku(screen, Plitka):
     color = Plitka.color
     zhizn = Plitka.zhizn
     if zhizn == True:
-        pygame.rect(screen, color, (x - l/2, y - d/2, l, d))
+        rect(screen, color, (x - l/2, y - d/2, l, d))
+        rect(screen, 'WHITE', (x - l/2, y - d/2, l, d), 1)
 
 def destroy(Plitka, Ball): #FIXME: Ball
     """Функция, определяющая, столкнулся ли шарик с какой-либо плиткой
@@ -29,5 +31,4 @@ def destroy(Plitka, Ball): #FIXME: Ball
             #FIXME: добавить смену направления движения шарика после столкновения 
         else:
             return 0
-
-    
+        
