@@ -24,11 +24,11 @@ class gif:
         ]
         self.currimage = 0
 
-    def blit(self, screen, pos):
+    '''def blit(self, screen, pos):
         self.currimage = (self.currimage + 1)  % (3 * len(self.IMAGES))
-        screen.blit(self.IMAGES[self.currimage//3], pos)
+        screen.blit(self.IMAGES[self.currimage//3], pos)'''
 
-BG = gif('background')
+#BG = gif('background') 
 
 # screen.blit(IMAGES['one'], (0,0))
 
@@ -47,23 +47,12 @@ rect(screen,GRAY, (0, 0, 1280, 800), 8 )
 #gamewindow
 rect(screen,GRAY, (47, 50, 843, 700), 5 )
 #score_Number
-digit_data = {
-    0: {'file': 'zero.png', 'pos': (100, 50)},
-    1: {'file': 'one.png', 'pos': (100, 50)},
-    2: {'file': 'two.png', 'pos': (80, 80)}, 
-    3: {'file': 'three.png', 'pos': (100, 50)},
-    4: {'file': 'four.png', 'pos': (100, 50)},
-    5: {'file': 'five.png', 'pos': (100, 50)},
-    6: {'file': 'six.png', 'pos': (100, 50)},
-    7: {'file': 'seven.png', 'pos': (100, 50)},
-    8: {'file': 'eight.png', 'pos': (100, 50)},
-    9: {'file': 'nine.png', 'pos': (100, 50)}
-}
+
 #HS
 rect(screen,BLUE, (920, 160, 320, 180), 2 )
 #S
 rect(screen,BLUE, (920, 240, 320, 60), 2 )
-while running:
+'''while running:
     BG.blit(screen, (0,0))
     clock.tick(FPS)
     for event in pygame.event.get():
@@ -72,7 +61,7 @@ while running:
     pygame.display.update()
 
     
-    pygame.display.flip()
+    pygame.display.flip()'''
     
 #end program
 pygame.quit()
