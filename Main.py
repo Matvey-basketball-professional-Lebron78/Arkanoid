@@ -14,6 +14,7 @@ score = 0
 FPS = 30
 screen = pygame.display.set_mode((1280, 800))
 finished = False
+vse_plitki = []
 
 #Запуск главного экрана
 
@@ -28,12 +29,12 @@ print(10)
 while finished == False:
     while score < 78:
         #clock.tick(FPS)
-        for PLI in vse_plitki: #Проверяем на столкновение
+        for PLI in Plitka.vse_plitki: #Проверяем на столкновение
             #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
             score_change = destroy(PLI, ball) #FIXME: Ball
             score += score_change
-        for PLI in vse_plitki: #Обновляем экран
-            #place_plitku(screen, PLI)
+        for PLI in Plitka.vse_plitki: #Обновляем экран
+            place_pl(screen, PLI)
             print(1)
         print(1)
         ball.draw(screen)
