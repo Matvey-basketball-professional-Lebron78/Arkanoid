@@ -52,8 +52,8 @@ rect(screen,GRAY, (47, 50, 843, 700), 5 )
 rect(screen,BLUE, (920, 160, 320, 180), 2 )
 #S
 rect(screen,BLUE, (920, 240, 320, 60), 2 )
-'''while running:
-    BG.blit(screen, (0,0))
+while running:
+    #BG.blit(screen, (0,0))
     clock.tick(FPS)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -61,7 +61,7 @@ rect(screen,BLUE, (920, 240, 320, 60), 2 )
     pygame.display.update()
 
     
-    pygame.display.flip()'''
+    pygame.display.flip()
     
 #end program
 pygame.quit()
