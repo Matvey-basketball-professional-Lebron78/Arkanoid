@@ -1,7 +1,7 @@
 import sys
 import pygame
 import math 
-pygame.init()
+pygame.init() #что-то
 
 #константы экрана
 SCREEN_WIDTH = 800
