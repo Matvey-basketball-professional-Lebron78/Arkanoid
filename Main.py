@@ -9,6 +9,7 @@ from plitki import *
 from func import *
 from ballandplatform import *
 #Здесь всякие штуки, которые нужны для pygame и кода
+clock = pygame.time.Clock()
 score = 0
 FPS = 30
 screen = pygame.display.set_mode((1280, 800))
@@ -21,8 +22,8 @@ finished = False
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
 #while not finished:
     
-start()
-    
+start(screen, clock)
+print(10)
 #Здесь будет проверка того, что еще остались плитки
 while finished == False:
     while score < 78:
@@ -32,7 +33,7 @@ while finished == False:
             score_change = destroy(PLI, ball) #FIXME: Ball
             score += score_change
         for PLI in vse_plitki: #Обновляем экран
-            place_plitku(screen, PLI)
+            #place_plitku(screen, PLI)
             print(1)
         print(1)
         ball.draw(screen)
