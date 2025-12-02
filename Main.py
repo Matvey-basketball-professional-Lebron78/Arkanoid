@@ -5,7 +5,7 @@ it contains all the information for our functions and runs these functions
 '''
 #Всякие импорты
 import pygame
-from plitki import *
+from Plitki import *
 from func import *
 #Здесь всякие штуки, которые нужны для pygame и кода
 score = 0

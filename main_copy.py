@@ -7,7 +7,7 @@ it contains all the information for our functions and runs these functions
 import pygame
 from plitki import *
 from func import *
-from ball
+from ballandplatform import *
 #Здесь всякие штуки, которые нужны для pygame и кода
 score = 0
 FPS = 30
