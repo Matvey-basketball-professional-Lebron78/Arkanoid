@@ -5,7 +5,7 @@ it contains all the information for our functions and runs these functions
 '''
 #Всякие импорты
 import pygame
-from plitki import *
+from Plitki import *
 from func import *
 from ballandplatform import *
 #Здесь всякие штуки, которые нужны для pygame и кода
@@ -26,12 +26,12 @@ finished = False
 #Здесь будет проверка того, что еще остались плитки
 while score < 78:
     #clock.tick(FPS)
-    for PLI in vse_plitki: #Проверяем на столкновение
+    for PLI in Plitka.vse_plitki: #Проверяем на столкновение
         #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
         score_change = destroy(PLI, Ball) #FIXME: Ball
         score += score_change
-    for PLI in vse_plitki: #Обновляем экран
-        place_plitku(screen, PLI)
+    for PLI in Plitka.vse_plitki: #Обновляем экран
+        place_pl(screen, PLI)
         #FIXME: здесь должна быть функция, рисующая шарик
     for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
         if event.type == pygame.QUIT:
