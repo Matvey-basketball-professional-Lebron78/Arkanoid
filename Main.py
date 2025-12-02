@@ -7,6 +7,7 @@ it contains all the information for our functions and runs these functions
 import pygame
 from Plitki import *
 from func import *
+from ballandplatform import *
 #Здесь всякие штуки, которые нужны для pygame и кода
 score = 0
 FPS = 30
@@ -20,19 +21,23 @@ finished = False
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
 #while not finished:
     
-    
+start()
     
 #Здесь будет проверка того, что еще остались плитки
-while score < 78:
-    #clock.tick(FPS)
-    for PLI in vse_plitki: #Проверяем на столкновение
-        #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
-        score_change = destroy(PLI, Ball) #FIXME: Ball
-        score += score_change
-    for PLI in vse_plitki: #Обновляем экран
-        place_plitku(screen, PLI)
-        #FIXME: здесь должна быть функция, рисующая шарик
-    for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
-        if event.type == pygame.QUIT:
-            finished = True
+while finished == False:
+    while score < 78:
+        #clock.tick(FPS)
+        for PLI in vse_plitki: #Проверяем на столкновение
+            #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
+            score_change = destroy(PLI, ball) #FIXME: Ball
+            score += score_change
+        for PLI in vse_plitki: #Обновляем экран
+            place_plitku(screen, PLI)
+            print(1)
+        print(1)
+        ball.draw(screen)
+            #FIXME: здесь должна быть функция, рисующая шарик
+        for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
+            if event.type == pygame.QUIT:
+                finished = True
 #Здесь будет финальный экран с затраченным временем 1
