@@ -4,15 +4,30 @@ This file was writed by matvey ...
 it contains function to wa=orj=k with plitki
 '''
 
-
 import pygame
 from pygame.draw import *
+from Functions import *
 
 COLORS = ['GREY','RED','BLUE','ORANGE','PINK','GREEN']
 #FIXME: Это убрать потом
 FPS = 30
 screen = pygame.display.set_mode((1280, 800))
 #^^
+
+def place_plitku(screen, Plitka):
+    """Функция, рисующая плитки.
+    Принимает на вход координаты плитки, размеры плитки, цвет плитки, статус жизни плитки"""
+    
+    x = Plitka.x
+    y = Plitka.y
+    l = Plitka.l
+    d = Plitka.d
+    color = Plitka.color
+    zhizn = Plitka.zhizn
+    if zhizn == True:
+        rect(screen, color, (x - l/2, y - d/2, l, d))
+        rect(screen, 'WHITE', (x - l/2, y - d/2, l, d), 1)
+
 class Plitka:
     """Класс, содержащий плитки/кирпичики, которые уничтожаются, когда в них попадает шарик
     Содержит положение плитки(x, y - центр плитки), размер плитки(l - длина, d - ширина), цвет плитки, статус жизни(уничтожена или нет), ряд и столбец плитки"""
@@ -39,20 +54,6 @@ class Plitka:
 
 vse_plitki = []
 
-def place_plitku(screen, Plitka):
-    """Функция, рисующая плитки.
-    Принимает на вход координаты плитки, размеры плитки, цвет плитки, статус жизни плитки"""
-    
-    x = Plitka.x
-    y = Plitka.y
-    l = Plitka.l
-    d = Plitka.d
-    color = Plitka.color
-    zhizn = Plitka.zhizn
-    if zhizn == True:
-        rect(screen, color, (x - l/2, y - d/2, l, d))
-        rect(screen, 'WHITE', (x - l/2, y - d/2, l, d), 1)
-
 
 for i in range (78):
     """Создаем 78 плиток (13 * 6)"""
@@ -60,6 +61,7 @@ for i in range (78):
     vse_plitki.append(pl)
 i = 0
 j = 0
+
 for plit in vse_plitki:
     """Каждой плитке присваиваем координаты и цвет"""
     #Каждой плитке присваивается номер ряда и столбца
@@ -88,3 +90,5 @@ while not finished:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             finished = True
+
+

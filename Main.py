@@ -1,8 +1,13 @@
+'''
+Docstring for Main
+This file was writed by our sweat and blood
+it contains all the information for our functions and runs these functions
+'''
 #Всякие импорты
 import pygame
-from Plitki_Matvey import *
+from Plitki import *
 from Functions import *
-
+from 
 #Здесь всякие штуки, которые нужны для pygame и кода
 score = 0
 FPS = 30
