@@ -27,7 +27,22 @@ start(screen, clock)
 print(10)
 #Здесь будет проверка того, что еще остались плитки
 while finished == False:
-    while score < 78:
+    if score < 78:
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        platform.move_left(window_x = WINDOW_X)
+                    elif event.button == 3:
+                        platform.move_right()
+                    elif event.button == 2:
+                        ball.activate(platform.rect)
+        
+        
+        
+        
+        
+        
+        
         #clock.tick(FPS)
         '''for PLI in Plitka.vse_plitki: #Проверяем на столкновение
             #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
