@@ -21,27 +21,27 @@ finished = False
 
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
 t = 0
-create_pl()
-platform, ball = start(screen, clock)
+create_pl() #Это работает!
+platform, ball = start(screen, clock) #Здесь создаются платформа и шарик(всё нормально, они в классах)
 print(10)
 #Здесь будет проверка того, что еще остались плитки
 while finished == False:
     if score < 78:
-        for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                    if event.button == 1:
-                        platform.move_left(window_x = WINDOW_X)
-                    elif event.button == 3:
-                        platform.move_right()
-                    elif event.button == 2:
-                        ball.activate(platform.rect)
-        
-        
-        
-        
-        
-        
-        
+        screen.fill('BLACK')
+        mouse_button = pygame.mouse.get_pressed()
+        if mouse_button[0]:
+            platform.move_left(window_x = WINDOW_X)
+        if mouse_button[2]:
+            platform.move_right()
+        #неактивный мяч - на платформе + обновление координат активного мяча
+        if not ball.active:
+            ball.rect.midbottom = platform.rect.midtop
+        ball.update(platform)
+        #инактивация мяча в случае вылета за нижнюю границу
+        if ball.rect.top > WINDOW_Y + WINDOW_HEIGHT:
+            ball.active = False
+            
+            
         #clock.tick(FPS)
         '''for PLI in Plitka.vse_plitki: #Проверяем на столкновение
             #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
