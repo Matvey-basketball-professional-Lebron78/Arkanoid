@@ -119,7 +119,7 @@ def start(screen, clock):
                 window_y = WINDOW_Y)
 
     #обработка события закрытия окна
-    while True:
+    '''while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return -1
@@ -150,14 +150,14 @@ def start(screen, clock):
         if ball.rect.top > WINDOW_Y + WINDOW_HEIGHT:
             ball.active = False
         #отрисовка объектов
-        '''screen.fill(WHITE)'''
+        screen.fill(WHITE)
         platform.draw(screen)
         ball.draw(screen)
 
         pygame.display.flip()
         clock.tick(60)
 
-'''if __name__ == "__main__":
+    if __name__ == "__main__":
     #создаётся окно, с заголовком
     #screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Arkanoid")
