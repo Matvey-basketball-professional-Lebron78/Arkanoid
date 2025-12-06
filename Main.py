@@ -46,11 +46,12 @@ while finished == False:
             
             
         #clock.tick(FPS)
-        '''for PLI in Plitka.vse_plitki: #Проверяем на столкновение
+        for PLI in Plitka.vse_plitki: #Проверяем на столкновение
             #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
-            #score_change = destroy(PLI, ball) #FIXME: Ball
+            
+            score_change = destroy(PLI, ball) #FIXME: Ball
             print(1)
-            score += score_change'''
+            '''score += score_change'''
         for PLI in Plitka.vse_plitki: #Обновляем экран. Эта функция
             place_pl(screen, PLI)
         platform.draw(screen)

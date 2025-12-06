@@ -20,11 +20,12 @@ def destroy(Plitka, Ball): #FIXME: Ball
     Если шарик задевает плитку, статус плитки меняется на 'разрушена', шарик отбивается от плитки и летит в другую сторону"""
     if Plitka.zhizn == True:
         #Ищем ближайшую к шарику точку на плитке
-        closest_x = max(Plitka.x - Plitka.l/2, min(Ball.x, Plitka.x + Plitka.l/2))
-        closest_y = max(Plitka.y - Plitka.d/2, min(Ball.y, Plitka.y + Plitka.d/2))
+        closest_x = max(Plitka.x - Plitka.l/2, min(Ball.rect.x, Plitka.x + Plitka.l/2))
+        closest_y = max(Plitka.y - Plitka.d/2, min(Ball.rect.y, Plitka.y + Plitka.d/2))
         
-        if  (closest_x - Ball.x)^2 + (closest_y - Ball.y)^2 <= Ball.r:
+        if  (closest_x - Ball.rect.x)^2 + (closest_y - Ball.rect.y)^2 <= (Ball.radius)^2:
             Plitka.zhizn = False
+            Ball.angle = -Ball.angle
             return 1
             #FIXME: добавить увеличение количества очков после столкновения
             
