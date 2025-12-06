@@ -117,7 +117,7 @@ def start(screen, clock):
                 window_height = WINDOW_HEIGHT,
                 window_x = WINDOW_X,
                 window_y = WINDOW_Y)
-
+    return platform, ball
     #обработка события закрытия окна
     '''while True:
         for event in pygame.event.get():

@@ -20,14 +20,10 @@ finished = False
 #Начало игры(Большая надпись "Начало", затем мячик появляется на верхней части платформы и летит вертикально вверх, но с небольшим углом)
 
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
-#while not finished:
 t = 0
 create_pl()
 platform, ball = start(screen, clock)
 print(10)
-print(f"platform object: {platform}")
-print(f"platform type: {type(platform)}")
-print(f"platform methods: {dir(platform)}")
 #Здесь будет проверка того, что еще остались плитки
 while finished == False:
     if score < 78:
@@ -54,8 +50,8 @@ while finished == False:
             score += score_change'''
         for PLI in Plitka.vse_plitki: #Обновляем экран. Эта функция
             place_pl(screen, PLI)
-        #Platform.draw(platform, screen)
-        #Ball.ball.draw(screen)
+        platform.draw(screen)
+        ball.draw(screen)
         #ball.draw(screen)
         pygame.display.update()
             #FIXME: здесь должна быть функция, рисующая шарик
