@@ -112,7 +112,7 @@ def start(screen, clock):
     ball = Ball(x = platform.rect.centerx,
                 y = platform.rect.top - 10,
                 radius = 10,
-                speed = 7,
+                speed = 10,
                 window_width = WINDOW_WIDTH,
                 window_height = WINDOW_HEIGHT,
                 window_x = WINDOW_X,

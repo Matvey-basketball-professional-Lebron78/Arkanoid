@@ -5,7 +5,7 @@ it contains all the information for our functions and runs these functions
 '''
 #Всякие импорты
 import pygame
-from plitki import *
+from Plitki import *
 from func import *
 from ballandplatform import *
 #Здесь всякие штуки, которые нужны для pygame и кода
@@ -34,6 +34,9 @@ while finished == False:
         if mouse_button[2]:
             platform.move_right()
         #неактивный мяч - на платформе + обновление координат активного мяча
+        if mouse_button[1]:
+            ball.activate(platform.rect)
+        
         if not ball.active:
             ball.rect.midbottom = platform.rect.midtop
         ball.update(platform)
@@ -58,4 +61,5 @@ while finished == False:
         for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
             if event.type == pygame.QUIT:
                 finished = True
+        clock.tick(60)
 #Здесь будет финальный экран с затраченным временем 1
