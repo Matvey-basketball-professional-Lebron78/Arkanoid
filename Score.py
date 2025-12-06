@@ -5,11 +5,11 @@ import os
 pygame.init()
 
 # Настройки
-WIDTH, HEIGHT = 600, 200
+WIDTH, HEIGHT = 240, 80
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 clock = pygame.time.Clock()
 
-def load_digit_images(folder="digits", width=80, height=120):
+def load_digit_images(folder="digits", width=80, height=80):
     """Загружает все цифры из папки"""
     images = {}
     print(f"Загружаю цифры из папки: {folder}")
@@ -83,25 +83,14 @@ def draw_score(surface, score, images, x, y, spacing=5, digits=6):
         else:
             print(f"Нет изображения для цифры: {digit}")
 
-# ==== ВАЖНО: Настройте эти параметры под ваши картинки ====
 
-# 1. Имя папки с цифрами (если ваши цифры в другой папке)
-folder_name = "digits"  # Измените, если ваши цифры в другой папке
-
-# 2. Размер ваших цифр (в пикселях)
-# Измените эти значения на реальный размер ваших картинок
-digit_width = 80    # Ширина одной цифры в пикселях
-digit_height = 120  # Высота одной цифры в пикселях
-
-# 3. Координаты отображения
-display_x = 50  # X координата левого края
-display_y = 50  # Y координата верхнего края
-
-# 4. Расстояние между цифрами
-digit_spacing = 5
-
-# 5. Количество цифр (сколько всего показывать)
-num_digits = 6
+folder_name = folder_name = "images\digits"
+digit_width = 80
+digit_height = 80
+display_x = 0
+display_y = 0 
+digit_spacing = 0
+num_digits = 3
 
 # Загрузка изображений
 digit_images = load_digit_images(folder_name, digit_width, digit_height)
@@ -114,45 +103,13 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
-                current_score += 1
-            elif event.key == pygame.K_DOWN:
-                current_score = max(0, current_score - 1)
-            elif event.key == pygame.K_SPACE:
-                current_score = 0
-            elif event.key == pygame.K_1:
-                current_score = 42
-            elif event.key == pygame.K_2:
-                current_score = 986
-            elif event.key == pygame.K_3:
-                current_score = 123456
-    
+       
     # Отрисовка
     screen.fill((0, 0, 0))
     
     # Рисуем счет
     draw_score(screen, current_score, digit_images, 
                display_x, display_y, digit_spacing, num_digits)
-    
-    # Информация
-    font = pygame.font.SysFont(None, 36)
-    score_text = font.render(f"Score: {current_score}", True, (255, 255, 255))
-    screen.blit(score_text, (50, 150))
-    
-    # Инструкции
-    font_small = pygame.font.SysFont(None, 24)
-    instructions = [
-        "Управление:",
-        "Стрелка вверх: +1",
-        "Стрелка вниз: -1",
-        "Пробел: сброс",
-        "1: 42, 2: 986, 3: 123456"
-    ]
-    
-    for i, text in enumerate(instructions):
-        text_surf = font_small.render(text, True, (200, 200, 200))
-        screen.blit(text_surf, (400, 50 + i * 25))
     
     pygame.display.flip()
     clock.tick(60)
