@@ -23,7 +23,7 @@ def destroy(Plitka, Ball): #FIXME: Ball
         closest_x = max(Plitka.x - Plitka.l/2, min(Ball.rect.x, Plitka.x + Plitka.l/2))
         closest_y = max(Plitka.y - Plitka.d/2, min(Ball.rect.y, Plitka.y + Plitka.d/2))
         
-        if  (closest_x - Ball.rect.x)^2 + (closest_y - Ball.rect.y)^2 <= (Ball.radius)^2:
+        if  (closest_x - Ball.rect.x)**2 + (closest_y - Ball.rect.y)**2 <= (Ball.radius)**2:
             Plitka.zhizn = False
             Ball.angle = -Ball.angle
             return 1
