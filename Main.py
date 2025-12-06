@@ -22,20 +22,23 @@ finished = False
 #Здесь будет обновление данных для каждого кадра(1. проверка на столкновение 2. рисуются все объекты)
 #while not finished:
 t = 0
+create_pl()
 start(screen, clock)
 print(10)
 #Здесь будет проверка того, что еще остались плитки
 while finished == False:
     while score < 78:
         #clock.tick(FPS)
-        for PLI in Plitka.vse_plitki: #Проверяем на столкновение
+        '''for PLI in Plitka.vse_plitki: #Проверяем на столкновение
             #Цикл проверяет, не столкнулись ли шарик и плитка. Если столкнулись, он добавляет очко к общему счёту, а еще функция уничтожает эту плитку
-            score_change = destroy(PLI, ball) #FIXME: Ball
-            score += score_change
+            #score_change = destroy(PLI, ball) #FIXME: Ball
+            print(1)
+            score += score_change'''
         for PLI in Plitka.vse_plitki: #Обновляем экран
             place_pl(screen, PLI)
             print(1)
-        ball.draw(screen)
+        #ball.draw(screen)
+        pygame.display.update()
             #FIXME: здесь должна быть функция, рисующая шарик
         for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
             if event.type == pygame.QUIT:

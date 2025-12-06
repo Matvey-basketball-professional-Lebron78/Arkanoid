@@ -38,28 +38,28 @@ class Plitka:
     
     vse_plitki = []
     
-    def __init__(self):
-        for i in range (78):
-            """Создаем 78 плиток (13 * 6)"""
-            pl = Plitka()
-            vse_plitki.append(pl)
-        i = 0
-        j = 0
-
-        for plit in vse_plitki:
-            """Каждой плитке присваиваем координаты и цвет"""
-            #Каждой плитке присваивается номер ряда и столбца
-            plit.stolb = i
-            plit.ryad = j
-            #Каждой плитке присваиваются координаты
-            plit.x = 86 + plit.l * i 
-            plit.y = 73 + plit.d * j
-            #Каждой плитке присваивается цвет
-            plit.color = COLORS[j]
-            i += 1
-            if i > 12:
-                i = 0
-                j += 1
+def create_pl():
+    for i in range (78):
+        """Создаем 78 плиток (13 * 6)"""
+        pl = Plitka()
+        Plitka.vse_plitki.append(pl)
+    i = 0
+    j = 0
+    print(2+i)
+    for plit in Plitka.vse_plitki:
+        """Каждой плитке присваиваем координаты и цвет"""
+        #Каждой плитке присваивается номер ряда и столбца
+        plit.stolb = i
+        plit.ryad = j
+        #Каждой плитке присваиваются координаты
+        plit.x = 86 + plit.l * i 
+        plit.y = 73 + plit.d * j
+        #Каждой плитке присваивается цвет
+        plit.color = COLORS[j]
+        i += 1
+        if i > 12:
+            i = 0
+            j += 1
 
 
 #Здесь функция, которая задает всем плиткам положение и цвет
