@@ -157,12 +157,12 @@ def start(screen, clock):
         pygame.display.flip()
         clock.tick(60)
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     #создаётся окно, с заголовком
-    screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    #screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     pygame.display.set_caption("Arkanoid")
     clock = pygame.time.Clock()
     x = start(screen, clock)
     print(x)
     pygame.quit()
-    sys.exit()
+    sys.exit()'''
