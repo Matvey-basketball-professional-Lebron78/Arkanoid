@@ -150,7 +150,7 @@ def start(screen, clock):
         if ball.rect.top > WINDOW_Y + WINDOW_HEIGHT:
             ball.active = False
         #отрисовка объектов
-        screen.fill(WHITE)
+        '''screen.fill(WHITE)'''
         platform.draw(screen)
         ball.draw(screen)
 
