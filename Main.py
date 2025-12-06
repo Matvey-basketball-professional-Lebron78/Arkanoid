@@ -28,13 +28,14 @@ print(10)
 #Здесь будет проверка того, что еще остались плитки
 while finished == False:
     if score < 78:
-        if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    platform.move_left(window_x = WINDOW_X)
-                elif event.button == 3:
-                    platform.move_right()
-                elif event.button == 2:
-                    ball.activate(platform.rect)
+        for event in pygame.event.get():
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                    if event.button == 1:
+                        platform.move_left(window_x = WINDOW_X)
+                    elif event.button == 3:
+                        platform.move_right()
+                    elif event.button == 2:
+                        ball.activate(platform.rect)
         
         
         
