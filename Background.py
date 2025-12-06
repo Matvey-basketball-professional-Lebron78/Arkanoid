@@ -1,72 +1,52 @@
-import pygame
-from pygame.draw import *
-import sys
-import os
 
+import pygame
+import sys
+
+# Инициализация PyGame
 pygame.init()
 
-#window 
-screen = pygame.display.set_mode((1280, 800))
-FPS=30
-clock = pygame.time.Clock()
-pygame.display.update()
+# Установка размеров окна (1280x800)
+screen_width = 1280
+screen_height = 800
+screen = pygame.display.set_mode((screen_width, screen_height))
+pygame.display.set_caption("Отображение картинки")
+
+# Загрузка картинки из папки background
+try:
+    # Если картинка в папке background
+    image = pygame.image.load('images/background/-1.png')
+    # Если картинка в той же папке, что и код
+    # image = pygame.image.load('-1.png')
+except FileNotFoundError:
+    print("Ошибка: файл -1.png не найден в папке background!")
+    print("Проверьте правильность пути к файлу.")
+    sys.exit()
+
+# Преобразование изображения для лучшей производительности
+image = image.convert()
+
+# Основной цикл программы
 running = True
-
-
-#collors 
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-YELLOW = (255, 255, 0)
-BLACK = (0, 0, 0)
-GRAY = (211, 211, 211) 
-
-class gif:
-    def __init__(self, path, *args, **kwargs):
-
-        # self.IMAGES = {filename: pygame.image.load(os.path.join('images', path, filename)) for fil/name in os.listdir('images') }
-        self.IMAGES = [
-            pygame.image.load(os.path.join('images', path, f'{i}.png'))
-            for i in range(len(os.listdir(os.path.join('images', path))))
-        ]
-        self.currimage = 0
-
-    ''' def blit(self, screen, pos):
-        self.currimage = (self.currimage + 1)  % (3 * len(self.IMAGES))
-        screen.blit(self.IMAGES[self.currimage//3], pos) '''
-
-BG = gif('background') 
-
-for i in range(9):  
-    filename = f'{i}.png'
-    if filename in BG.IMAGES:
-        screen.blit(BG.IMAGES[filename], (23 + i*50, 50))
-    
-
-#background
-# screen.fill((BLACK))
-
-rect(screen,GRAY, (0, 0, 1280, 800), 8 )
-#gamewindow
-rect(screen,GRAY, (47, 50, 843, 700), 5 )
-#score_Number
-
-#HS
-rect(screen,BLUE, (920, 160, 320, 180), 2 )
-#S
-rect(screen,BLUE, (920, 240, 320, 60), 2 )
 while running:
-    #BG.blit(screen, (0,0))
-    clock.tick(FPS)
+    # Обработка событий
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
-    pygame.display.update()
-
+        elif event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_ESCAPE:
+                running = False
     
+    # Очистка экрана
+    screen.fill((0, 0, 0))
+    
+    # Отображение картинки на весь экран
+    # Автоматическое масштабирование под размер окна
+    scaled_image = pygame.transform.scale(image, (screen_width, screen_height))
+    screen.blit(scaled_image, (0, 0))
+    
+    # Обновление экрана
     pygame.display.flip()
-    
-#end program
+
+# Завершение работы
 pygame.quit()
 sys.exit()
