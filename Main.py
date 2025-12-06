@@ -23,8 +23,11 @@ finished = False
 #while not finished:
 t = 0
 create_pl()
-start(screen, clock)
+platform, ball = start(screen, clock)
 print(10)
+print(f"platform object: {platform}")
+print(f"platform type: {type(platform)}")
+print(f"platform methods: {dir(platform)}")
 #Здесь будет проверка того, что еще остались плитки
 while finished == False:
     if score < 78:
@@ -49,9 +52,10 @@ while finished == False:
             #score_change = destroy(PLI, ball) #FIXME: Ball
             print(1)
             score += score_change'''
-        for PLI in Plitka.vse_plitki: #Обновляем экран
+        for PLI in Plitka.vse_plitki: #Обновляем экран. Эта функция
             place_pl(screen, PLI)
-            print(1)
+        #Platform.draw(platform, screen)
+        #Ball.ball.draw(screen)
         #ball.draw(screen)
         pygame.display.update()
             #FIXME: здесь должна быть функция, рисующая шарик
