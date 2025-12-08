@@ -8,10 +8,10 @@ SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 800
 
 #константы игрового окна
-WINDOW_WIDTH = 833
+WINDOW_WIDTH = 801
 WINDOW_HEIGHT = 685
-WINDOW_X = 55
-WINDOW_Y = 60
+WINDOW_X = 52
+WINDOW_Y = 55
 
 #цвета
 WHITE = (255,  255, 255)
@@ -120,50 +120,4 @@ def start(screen, clock):
                 window_y = WINDOW_Y)
     return platform, ball
     #обработка события закрытия окна
-    '''while True:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                return -1
-            
-            #привязка нажатия кнопок мыши к перемещениям платформы
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if event.button == 1:
-                    platform.move_left(window_x = WINDOW_X)
-                elif event.button == 3:
-                    platform.move_right()
-                elif event.button == 2:
-                    ball.activate(platform.rect)
-        
-        # if game.lose:
-        #    return score
-         
-        #при удержании кнопки платформа продолжает двигаться
-        mouse_button = pygame.mouse.get_pressed()
-        if mouse_button[0]:
-            platform.move_left(window_x = WINDOW_X)
-        if mouse_button[2]:
-            platform.move_right()
-        #неактивный мяч - на платформе + обновление координат активного мяча
-        if not ball.active:
-            ball.rect.midbottom = platform.rect.midtop
-        ball.update(platform)
-        #инактивация мяча в случае вылета за нижнюю границу
-        if ball.rect.top > WINDOW_Y + WINDOW_HEIGHT:
-            ball.active = False
-        #отрисовка объектов
-        screen.fill(WHITE)
-        platform.draw(screen)
-        ball.draw(screen)
-
-        pygame.display.flip()
-        clock.tick(60)
-
-    if __name__ == "__main__":
-    #создаётся окно, с заголовком
-    #screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-    pygame.display.set_caption("Arkanoid")
-    clock = pygame.time.Clock()
-    x = start(screen, clock)
-    print(x)
-    pygame.quit()
-    sys.exit()'''
+    
