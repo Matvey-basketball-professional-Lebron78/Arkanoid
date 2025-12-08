@@ -13,7 +13,7 @@ import os      # Модуль для работы с файловой систе
 
 # pygame.init() - это обязательная функция, которую нужно вызвать ДО использования pygame
 # Она инициализирует все модули pygame (видео, звук, шрифты и т.д.)
-pygame.init()
+#pygame.init()
 
 
 # ============================================================================
@@ -29,7 +29,7 @@ screen_height = 800    # Высота окна в пикселях
 #screen = pygame.display.set_mode((screen_width, screen_height))
 
 # Устанавливает заголовок окна (текст в верхней полоске окна)
-pygame.display.set_caption("Арканоид - Фон и Счет")
+#pygame.display.set_caption("Арканоид - Фон и Счет")
 
 # pygame.time.Clock() создает объект для контроля скорости выполнения программы
 # Помогает ограничить FPS (кадры в секунду)
@@ -272,17 +272,17 @@ num_digits = 4         # Сколько цифр показывать (4 = 0001,
 
 # running - это флаг (переменная которая может быть True или False)
 # Цикл while выполняется пока running = True
-running = True
+#running = True
 
-while running:
+#while running:
     # Обрабатываем события (события = нажатия клавиш, закрытие окна и т.д.)
     # pygame.event.get() возвращает список всех событий которые произошли
-    for event in pygame.event.get():
+    #for event in pygame.event.get():
         
         # Проверяем, закрыл ли пользователь окно (нажал крестик)
         # pygame.QUIT - это константа которая означает "закрытие окна"
-        if event.type == pygame.QUIT:
-            running = False  # Устанавливаем флаг в False, цикл завершится
+        #if event.type == pygame.QUIT:
+            #running = False  # Устанавливаем флаг в False, цикл завершится
     
     # ===== ОТРИСОВКА (РИСУЕМ НА ЭКРАНЕ) =====
     
@@ -295,8 +295,8 @@ while running:
     
     # Рисуем счет на экран
     # Передаем все необходимые параметры в функцию
-    '''draw_score(screen, current_score, digit_images, 
-               display_x, display_y, digit_spacing, num_digits)'''
+    #draw_score(screen, current_score, digit_images, 
+               #display_x, display_y, digit_spacing, num_digits)
     
     # pygame.display.flip() обновляет весь экран
     # Без этой команды мы рисуем в памяти, но ничего не видим на мониторе
@@ -315,8 +315,10 @@ while running:
 
 # pygame.quit() закрывает PyGame и освобождает ресурсы
 # Это нужно делать перед выходом
-pygame.quit()
+
+#pygame.quit()
 
 # sys.exit() завершает работу программы
 # Программа полностью закрывается
-sys.exit()
+
+#sys.exit()
