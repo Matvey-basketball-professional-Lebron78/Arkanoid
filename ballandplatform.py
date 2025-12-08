@@ -54,6 +54,7 @@ class Ball():
         if not self.active:
             self.active = True
             self.rect.midbottom = platform_rect.midtop
+            self.angle = math.pi/4
     #обновление положения мяча, если он активен
     def update(self, platform):
         if not self.active:
