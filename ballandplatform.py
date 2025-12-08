@@ -10,8 +10,8 @@ SCREEN_HEIGHT = 800
 #константы игрового окна
 WINDOW_WIDTH = 833
 WINDOW_HEIGHT = 685
-WINDOW_X = 52
-WINDOW_Y = 55
+WINDOW_X = 55
+WINDOW_Y = 60
 
 #цвета
 WHITE = (255,  255, 255)
