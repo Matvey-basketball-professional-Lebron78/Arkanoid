@@ -14,10 +14,11 @@ def place_pl(screen, Plitka):
         rect(screen, color, (x - l/2, y - d/2, l, d))
         rect(screen, 'WHITE', (x - l/2, y - d/2, l, d), 1)
 
-def destroy(Plitka, Ball): #FIXME: Ball
+def destroy(Plitka, Ball): 
     """Функция, определяющая, столкнулся ли шарик с какой-либо плиткой
     Принимает на вход координаты определённой плитки и координаты шарика в данный момент
     Если шарик задевает плитку, статус плитки меняется на 'разрушена', шарик отбивается от плитки и летит в другую сторону"""
+    
     if Plitka.zhizn == True:
         #Ищем ближайшую к шарику точку на плитке
         closest_x = max(Plitka.x - Plitka.l/2, min(Ball.rect.x, Plitka.x + Plitka.l/2))
@@ -27,9 +28,6 @@ def destroy(Plitka, Ball): #FIXME: Ball
             Plitka.zhizn = False
             Ball.angle = -Ball.angle
             return 1
-            #FIXME: добавить увеличение количества очков после столкновения
-            
-            #FIXME: добавить смену направления движения шарика после столкновения 
         else:
             return 0
         
