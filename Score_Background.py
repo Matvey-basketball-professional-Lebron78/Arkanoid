@@ -274,7 +274,7 @@ num_digits = 4         # Сколько цифр показывать (4 = 0001,
 # Цикл while выполняется пока running = True
 running = True
 
-while running:
+'''while running:
     # Обрабатываем события (события = нажатия клавиш, закрытие окна и т.д.)
     # pygame.event.get() возвращает список всех событий которые произошли
     for event in pygame.event.get():
@@ -282,7 +282,7 @@ while running:
         # Проверяем, закрыл ли пользователь окно (нажал крестик)
         # pygame.QUIT - это константа которая означает "закрытие окна"
         if event.type == pygame.QUIT:
-            running = False  # Устанавливаем флаг в False, цикл завершится
+            running = False  # Устанавливаем флаг в False, цикл завершится'''
     
     # ===== ОТРИСОВКА (РИСУЕМ НА ЭКРАНЕ) =====
     
@@ -295,8 +295,8 @@ while running:
     
     # Рисуем счет на экран
     # Передаем все необходимые параметры в функцию
-    '''draw_score(screen, current_score, digit_images, 
-               display_x, display_y, digit_spacing, num_digits)'''
+draw_score(screen, current_score, digit_images, 
+               display_x, display_y, digit_spacing, num_digits)
     
     # pygame.display.flip() обновляет весь экран
     # Без этой команды мы рисуем в памяти, но ничего не видим на мониторе
@@ -319,4 +319,4 @@ pygame.quit()
 
 # sys.exit() завершает работу программы
 # Программа полностью закрывается
-sys.exit()
+#sys.exit()

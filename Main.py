@@ -8,7 +8,7 @@ import pygame
 from Plitki import *
 from func import *
 from ballandplatform import *
-from Score_Background import *
+from Score_Background import load_background
 
 #Здесь всякие штуки, которые нужны для pygame и кода в целом
 clock = pygame.time.Clock()
@@ -27,9 +27,9 @@ platform, ball = start(screen, clock) #Здесь создаются платф�
 #Начало игры(Большая надпись "Начало", затем мячик появляется на верхней части платформы и летит вертикально вверх, но с небольшим углом)
 
 #1) проверка, что еще остались плитки 2) изменение параметров шарика, платформы и плиток 3) отрисовка объектов
+background = load_background('images/background/-1.png')
 while finished == False:
     if score < 78:
-        background = load_background('images/background/-1.png')
         screen.blit(background, (0, 0))
         mouse_button = pygame.mouse.get_pressed()
         if mouse_button[0]:
@@ -59,7 +59,6 @@ while finished == False:
             place_pl(screen, PLI)
         platform.draw(screen)
         ball.draw(screen)
-        #ball.draw(screen)
         pygame.display.update()
             #FIXME: здесь должна быть функция, рисующая шарик
         for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
