@@ -26,14 +26,14 @@ screen_height = 800    # Высота окна в пикселях
 
 # pygame.display.set_mode() создает окно с заданными размерами
 # Возвращает поверхность (Surface) на которой мы будем рисовать
-screen = pygame.display.set_mode((screen_width, screen_height))
+#screen = pygame.display.set_mode((screen_width, screen_height))
 
 # Устанавливает заголовок окна (текст в верхней полоске окна)
 pygame.display.set_caption("Арканоид - Фон и Счет")
 
 # pygame.time.Clock() создает объект для контроля скорости выполнения программы
 # Помогает ограничить FPS (кадры в секунду)
-clock = pygame.time.Clock()
+#clock = pygame.time.Clock()
 
 
 # ============================================================================
@@ -249,7 +249,7 @@ def draw_score(surface, score, images, x, y, spacing=5, digits=6):
 # ============================================================================
 
 # Загружаем фоновое изображение (или черный фон если файла нет)
-background = load_background('images/background/-1.png')
+#background = load_background('images/background/-1.png')
 
 # Загружаем все 10 цифр (0-9) размером 80x80 пикселей
 digit_images = load_digit_images("images/digits", 80, 80)
@@ -291,22 +291,22 @@ while running:
     # background - это загруженный фон
     # (0, 0) - это левый верхний угол экрана
     # .blit() = нарисовать
-    screen.blit(background, (0, 0))
+    #screen.blit(background, (0, 0))
     
     # Рисуем счет на экран
     # Передаем все необходимые параметры в функцию
-    draw_score(screen, current_score, digit_images, 
-               display_x, display_y, digit_spacing, num_digits)
+    '''draw_score(screen, current_score, digit_images, 
+               display_x, display_y, digit_spacing, num_digits)'''
     
     # pygame.display.flip() обновляет весь экран
     # Без этой команды мы рисуем в памяти, но ничего не видим на мониторе
     # flip() показывает всё нарисованное
-    pygame.display.flip()
+    #pygame.display.flip()
     
     # clock.tick(60) ограничивает скорость до 60 FPS (кадров в секунду)
     # Это значит максимум 60 раз в секунду выполнится этот цикл
     # Без этого программа может работать слишком быстро
-    clock.tick(60)
+    #clock.tick(60)
 
 
 # ============================================================================

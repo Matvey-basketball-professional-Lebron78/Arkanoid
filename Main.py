@@ -8,6 +8,7 @@ import pygame
 from Plitki import *
 from func import *
 from ballandplatform import *
+from Score_Background import *
 
 #Здесь всякие штуки, которые нужны для pygame и кода в целом
 clock = pygame.time.Clock()
@@ -28,7 +29,8 @@ platform, ball = start(screen, clock) #Здесь создаются платф�
 #1) проверка, что еще остались плитки 2) изменение параметров шарика, платформы и плиток 3) отрисовка объектов
 while finished == False:
     if score < 78:
-        screen.fill('BLACK')
+        background = load_background('images/background/-1.png')
+        screen.blit(background, (0, 0))
         mouse_button = pygame.mouse.get_pressed()
         if mouse_button[0]:
             platform.move_left(window_x = WINDOW_X)
