@@ -9,11 +9,6 @@ from pygame.draw import *
 from func import *
 
 COLORS = ['GREY','RED','BLUE','ORANGE','PINK','GREEN']
-#FIXME: Это убрать потом
-FPS = 30
-screen = pygame.display.set_mode((1280, 800))
-#^^
-
 
 
 class Plitka:
@@ -37,7 +32,7 @@ class Plitka:
     zhizn = True
     
     vse_plitki = []
-    
+
 def create_pl():
     for i in range (78):
         """Создаем 78 плиток (13 * 6)"""
@@ -52,8 +47,8 @@ def create_pl():
         plit.stolb = i
         plit.ryad = j
         #Каждой плитке присваиваются координаты
-        plit.x = 86 + plit.l * i 
-        plit.y = 73 + plit.d * j
+        plit.x = 83 + plit.l * i 
+        plit.y = 68 + plit.d * j
         #Каждой плитке присваивается цвет
         plit.color = COLORS[j]
         i += 1
