@@ -63,5 +63,5 @@ while finished == False:
         for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
             if event.type == pygame.QUIT:
                 finished = True
-        clock.tick(60)
+        clock.tick(30)
 #Здесь будет финальный экран с затраченным временем 1
