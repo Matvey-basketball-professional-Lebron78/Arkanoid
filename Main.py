@@ -89,8 +89,9 @@ while finished == False and score < 78:
 #УРА ПОБЕДА
 clock.tick(10)
 screen.fill('BLACK')
-ura_pobeda = font.render('ПОЗДРАВЛЯЕМ', True, (255, 255, 255))
-uraura_pobeda  = ura_pobeda.get_rect(center=(1280, 800))
+ura_pobeda = font.render('УРА-УРА ПОЗДРАВЛЯЕМ!!', True, (255, 255, 255))
+uraura_pobeda  = ura_pobeda.get_rect(center=(640, 400))
 screen.blit(ura_pobeda, uraura_pobeda)
-clock.tick(3)
+pygame.display.update()
+clock.tick(0.5)
 pygame.quit()
