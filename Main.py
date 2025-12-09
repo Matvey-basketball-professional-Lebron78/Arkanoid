@@ -28,15 +28,23 @@ platform, ball = start(screen, clock) #Здесь создаются платф�
 #Запуск вступительного экрана
 knopka_x, knopka_y, knopka_len, knopka_wid = 340, 400, 600, 200
 start_txt = font_big.render('START', True, (0, 0, 0))
-txt_rect  = start_txt.get_rect(center=(knopka_x + knopka_len//2, knopka_y + knopka_wid//2))
 mainmenu = True
 while mainmenu == True:
     screen.fill('BLACK')
+    txt_rect  = start_txt.get_rect(center=(knopka_x + knopka_len//2, knopka_y + knopka_wid//2))
     pygame.draw.rect(screen, (255, 255, 255), (knopka_x, knopka_y, knopka_len, knopka_wid))
     screen.blit(start_txt, txt_rect)
-    mouse_button = pygame.mouse.get_pressed()
-    clock.tick(50)
     pygame.display.update()
+    clock.tick(2)
+    
+    screen.fill('BLACK')
+    txt_rect  = start_txt.get_rect(center=(knopka_x + 3 + knopka_len//2, knopka_y + 3 + knopka_wid//2))
+    pygame.display.update()
+    pygame.draw.rect(screen, (255, 255, 255), (knopka_x + 3, knopka_y + 3, knopka_len, knopka_wid))
+    screen.blit(start_txt, txt_rect)
+    pygame.display.update()
+    clock.tick(2)
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
@@ -44,7 +52,8 @@ while mainmenu == True:
             mx, my = pygame.mouse.get_pos()
             if knopka_x <= mx <= knopka_x + knopka_len and knopka_y <= my <= knopka_y + knopka_wid:
                 mainmenu = False
-#Начало игры(Большая надпись "Начало", затем мячик появляется на верхней части платформы и летит вертикально вверх, но с небольшим углом)
+
+
 clock.tick(5)
 #1) проверка, что еще остались плитки 2) изменение параметров шарика, платформы и плиток 3) отрисовка объектов
 while finished == False and score < 78:
@@ -84,6 +93,7 @@ while finished == False and score < 78:
     for event in pygame.event.get(): #Проверяем, не нажали ли на крестик справа сверху
         if event.type == pygame.QUIT:
             finished = True
+            pygame.quit()
     clock.tick(50)
         
 #УРА ПОБЕДА
