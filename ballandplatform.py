@@ -66,19 +66,19 @@ class Ball():
         self.rect.x += dx
         self.rect.y += dy
 
-        self._check_boundary_collision(window_x = WINDOW_X)
+        self._check_boundary_collision(window_x = WINDOW_X, window_y = WINDOW_Y)
         self._check_platform_collision(platform)
     
     #отталкивание от стенок
-    def _check_boundary_collision(self, window_x):
+    def _check_boundary_collision(self, window_x, window_y):
         if self.rect.left <= window_x:
             self.rect.left = window_x
             self.angle = math.pi - self.angle
         elif self.rect.right >= self.screen_width:
             self.rect.right = self.screen_width
             self.angle = math.pi - self.angle
-        if self.rect.top <= 0:
-            self.rect.top = 0
+        if self.rect.top <= window_y:
+            self.rect.top = window_y
             self.angle = -self.angle
     
     # отталкивание от платформы
